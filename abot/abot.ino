@@ -8,13 +8,15 @@ void setup(){
   l.attach(12);
   r.attach(13);
   delay(3000);
-  intro();
+  intro(); // 불이 켜짐
   delay(3000);
-  bitSpin();
-  wave();
-  side();
+  bitSpin(); // 한바퀴 반 ~ 두바퀴 회전
+  wave(); // 앞 뒤로 3번 이동
+  side(); // 좌우로 움직이며 대각선으로 이동
+  // Abot 멈춤
   r.write(1500);
   l.write(1500);
+  // LED 3번 깜빡임
   for(int i = 0; i < 3; i++) led();
 }
 void loop() {}
