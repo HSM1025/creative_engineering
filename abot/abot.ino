@@ -5,18 +5,22 @@ void setup(){
   pinMode(11, OUTPUT);
   pinMode(8, OUTPUT);
   pinMode(2, OUTPUT);
+  // 모터 연결
   l.attach(12);
   r.attach(13);
   delay(3000);
-  intro();
+  intro(); // LED 켜짐 & 전진
   delay(3000);
+  // 3번 반복
   for(int i = 0; i < 3; i++){
-    bitSpin();
-    wave();
-    side();
+    bitSpin(); // 1바퀴 반 ~ 2바퀴 제자리 회전
+    wave(); // 전진 후진 3번 반복
+    side(); // 좌우로 비틀며 전진
   }
+  // 모터 멈춤
   r.write(1500);
   l.write(1500);
+  // LED 3번 깜빡임
   for(int i = 0; i < 3; i++) led();
 }
 void loop() {}
